@@ -1,8 +1,3 @@
-deploy pen access, a static web app or something.
-
-
-----------------------------------------
-
 name: Azure Static Web Apps CI/CD
 
 on:
