@@ -19,8 +19,17 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Set Node options for Webpack
-        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+          
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: NPM install + build
+        run: |
+          npm install
+          npm run build
+              
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
