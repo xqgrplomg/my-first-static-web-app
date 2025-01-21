@@ -19,6 +19,12 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      # STEP 1: Set NODE_OPTIONS for this workflow run
+      - name: Use legacy crypto
+        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+
+        
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
